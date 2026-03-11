@@ -15,4 +15,13 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject); // Destroy the obstacle game object
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player")) // Check if the obstacle collided with the player
+        {
+            collision.GetComponent<Player>().IncrementScore(); // Increment the player's score by calling the IncrementScore method on the Player script
+            Debug.Log($"Player passed through: {gameObject.name}. Score: {collision.GetComponent<Player>().Score}."); // Log the name of the obstacle that the player passed through
+        }
+    }
 }
