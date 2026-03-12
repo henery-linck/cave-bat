@@ -11,22 +11,11 @@ public class Player : MonoBehaviour
 
     #region Private Fields
     private Rigidbody2D _rigidBody; // Reference to the player's Rigidbody2D component
-    private float _score; // Variable to keep track of the player's score
-    #endregion
-
-    #region Properties
-
-    public float Score
-    {
-        get { return _score; }
-    }
-
     #endregion
 
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component attached to the player
-        _score = 0; // Initialize the score to zero
     }
 
     // Update is called once per frame
@@ -41,10 +30,5 @@ public class Player : MonoBehaviour
     private void Flap()
     {
         _rigidBody.AddForce(Vector2.up * _flapForce, ForceMode2D.Impulse); // Apply an upward force to the player using impulse mode
-    }
-
-    public void IncrementScore()
-    {
-        _score++; // Increment the player's score by one
     }
 }

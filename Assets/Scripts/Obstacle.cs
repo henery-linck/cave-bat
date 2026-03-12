@@ -20,8 +20,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.CompareTag("Player")) // Check if the obstacle collided with the player
         {
-            collision.GetComponent<Player>().IncrementScore(); // Increment the player's score by calling the IncrementScore method on the Player script
-            Debug.Log($"Player passed through: {gameObject.name}. Score: {collision.GetComponent<Player>().Score}."); // Log the name of the obstacle that the player passed through
+            collision.GetComponent<ScoreManager>().IncrementScore(); // Increment the player's score by calling the IncrementScore method on the Player script
         }
     }
 }
