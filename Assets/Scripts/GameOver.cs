@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    [SerializeField] GameManager _gameManager; // Reference to the GameManager script to call the GameOver method
     //GAME OVER
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -10,7 +11,7 @@ public class GameOver : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Player collided with: " + collision.gameObject.name); // Log the name of the object the player collided with
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reload the current scene to reset the game
+            _gameManager.GameOver(); // Call the GameOver method on the GameManager script to handle game over logic
         }
     }
 }
