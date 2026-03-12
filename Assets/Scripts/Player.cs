@@ -25,10 +25,16 @@ public class Player : MonoBehaviour
         {
             Flap(); // Call the Flap method to apply the flap force
         }
+
+        //Angles the bat based on the vertical velocity of the player
+        float angle = _rigidBody.linearVelocityY * 5f;
+        angle = Mathf.Clamp(angle, -60f, 30f); // Clamp the angle to a range of -60 to 30 degrees
+        transform.rotation = Quaternion.Euler(0, 0, angle); // Rotate the player to the calculated angle
     }
 
     private void Flap()
     {
+        _rigidBody.linearVelocityY = 0f; // Reset the vertical velocity to 0 before applying the flap force
         _rigidBody.AddForce(Vector2.up * _flapForce, ForceMode2D.Impulse); // Apply an upward force to the player using impulse mode
     }
 }
