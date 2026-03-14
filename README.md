@@ -1,4 +1,4 @@
-# Flappy Bat
+# Cave Bat
 
 A small 2D micro-game developed in **Unity (C#)** as part of a personal challenge to create **10 micro-games to learn game development**.
 
