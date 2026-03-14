@@ -4,6 +4,9 @@ A small 2D micro-game developed in **Unity (C#)** as part of a personal challeng
 
 The goal is to keep the scope extremely small and finish the game quickly.
 
+Play the game:
+https://wyrdstudio.itch.io/cave-bat
+
 ---
 
 # 🎮 Game Concept
